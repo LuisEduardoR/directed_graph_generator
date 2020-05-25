@@ -129,7 +129,7 @@ int main(int argc, char *argv[]) {
 
                 // Selects a random destination vertex.
                 rand_from = rng() % min_graph_depth;
-                if(rand_from != rand_to && !graph.has_edge(rand_from, rand_to)) { // Adds the vertex, ensuring it doesn't already exists, and it isn't a self cycle.
+                if(rand_from > rand_to && !graph.has_edge(rand_from, rand_to)) { // Adds the vertex, ensuring it doesn't already exists, and it isn't a self cycle.
                     graph.add_edge(rand_from, rand_to);
                     current_additional_edges++;
                     current_iterations = 0;
